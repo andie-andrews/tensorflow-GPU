@@ -16,19 +16,12 @@
 
 		// Use 'settings' to set default VS code values on container create
 		"settings": {
-			// Set the default Python interpreter to the system Python 3.12
-			// This ensures consistency across all users and sessions
-			"python.defaultInterpreterPath": "/usr/local/bin/python",
+			// Set the default Python interpreter
+			"python.defaultInterpreterPath": "/usr/bin/python",
 			
-			// Exclude older Python versions from Jupyter kernel list
+			// Exclude other Python versions from Jupyter kernel list
 			// Prevents confusion by hiding system Python versions we don't want to use
-			// The container has Python 3.12 as primary, but may have 3.13 for compatibility
-			"jupyter.kernels.excludePythonEnvironments": [
-				"/bin/python3",
-				"/bin/python3.13",
-				"/usr/bin/python3",
-				"/usr/bin/python3.13"
-			],
+			"jupyter.kernels.excludePythonEnvironments": ["/bin/python"],
 			
 			// Disable automatic port forwarding to give explicit control
 			"remote.autoForwardPorts": false,
