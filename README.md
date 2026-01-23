@@ -1,6 +1,6 @@
 # Containerized TensorFlow GPU development environment
 
-A containerized TensorFlow AI/ML development environment with NVIDIA GPU support. This repository provides a consistent development environment with wide GPU compatibility using VS Code Dev Containers, eliminating the need for manual environment setup. It provides the following:
+A containerized TensorFlow AI/ML development environment with NVIDIA GPU support. This repository provides a consistent development environment with wide GPU compatibility using VS Code Dev Containers, eliminating the need for (most of the) manual setup. It provides the following:
 
 - CUDA 12.5
 - cuDNN 9.1
@@ -19,7 +19,7 @@ And much more - the underlying docker container is a lightly customized version 
 - George's TensorFlow 2.16 container on DockerHub: [gperdrizet/tensorflow-gpu](https://hub.docker.com/r/gperdrizet/tensorflow-gpu)
 - NVIDIA's [TensorFlow Release 24.06 container](https://docs.nvidia.com/deeplearning/frameworks/tensorflow-release-notes/rel-24-06.html)
 
-The container needs Docker and a compatible NVIDIA driver installed to run. It should support NVIDIA GPUs back to Pascal on both Windows and Linux (MacOS users should be able to run it without GPU support - see below). 
+The container needs Docker and a compatible NVIDIA driver to run. It should support NVIDIA GPUs back to Pascal on both Windows and Linux. MacOS users or those otherwise without NVIDIA GPUs can run the CPU only version, see here [gperdrizet/tensorflow-CPU](https://github.com/gperdrizet/tensorflow-CPU). 
 
 ## 1. Prerequisites
 
@@ -146,7 +146,7 @@ git merge upstream/main
 
 ## TensorBoard
 
-When the container starts, port 6006 will be published automatically via Docker so that you can access it in a web browser on the host machine. The TensorBoard VS Code extension is also installed by default, so you can access TensorBoard from inside the container by finding `Python: Launch TensorBoard` in the command palette.
+When the container starts, TensorBoard will start and port 6006 will be published automatically via Docker so that you can access it in a web browser on the host machine. The TensorBoard VS Code extension is also installed by default, so you can access TensorBoard from inside the container by finding `Python: Launch TensorBoard` in the command palette.
 
 ---
 
