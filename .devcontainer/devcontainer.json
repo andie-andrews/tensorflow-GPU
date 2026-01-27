@@ -67,6 +67,8 @@
 	// Use 'postCreateCommand' to run commands once after the container is created
 	"postCreateCommand": "mkdir -p logs && mkdir -p models && mkdir -p data",
 
-	// Use 'postAttachCommand' to run commands each time a user connects to the container
-	"postAttachCommand": "/usr/local/bin/start_tensorboard.sh"
+	// Use 'postAttachCommand' to run TensorBoard
+	"postAttachCommand": {
+		"tensorboard": "tensorboard --logdir=logs --bind_all"
+	}
 }
