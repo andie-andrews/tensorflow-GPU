@@ -50,17 +50,41 @@ Based on [NVIDIA's TensorFlow 24.06 container](https://docs.nvidia.com/deeplearn
 
 ## TensorBoard
 
-TensorBoard starts automatically and is available at **http://localhost:6006**
+TensorBoard starts automatically and is available at **http://localhost:6006**. Place your logs in the `logs/` directory.
+
+---
+
+## Adding Python Packages
+
+### Using pip directly
+
+Install packages in the container terminal:
 
 ```bash
-# Attach to TensorBoard session
-screen -r tensorboard
-
-# Detach without stopping
-Ctrl+A, D
+pip install <package-name>
 ```
 
-Place your logs in the `logs/` directory.
+> **Note:** Packages installed this way will be lost when the container is rebuilt.
+
+### Using requirements.txt (Recommended)
+
+For persistent packages that survive container rebuilds:
+
+1. **Create** a `requirements.txt` file in the repository root:
+   ```
+   scikit-image==0.22.0
+   seaborn>=0.13.0
+   plotly
+   ```
+
+2. **Update** `.devcontainer/devcontainer.json` to install packages on container creation by adding a `postCreateCommand`:
+   ```json
+   "postCreateCommand": "pip install -r requirements.txt"
+   ```
+
+3. **Rebuild** the container (`F1` → "Dev Containers: Rebuild Container")
+
+Now your packages will be automatically installed whenever the container is created.
 
 ---
 
