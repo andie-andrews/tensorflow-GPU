@@ -6,7 +6,9 @@
 	// See here: https://hub.docker.com/r/gperdrizet/tensorflow-gpu
     // And here: https://docs.nvidia.com/deeplearning/frameworks/tensorflow-release-notes/rel-24-06.html
 	"name": "TensorFlow 2.16 GPU",
-	"image": "gperdrizet/tensorflow-gpu",
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
     "runArgs": [
 		"--gpus", "all",              // Enable all available GPUs in the container
 		"--ipc=host",                 // Connect to host interprocess namespace
@@ -42,7 +44,10 @@
 			
 			// Disable automatic port forwarding to give explicit control
 			"remote.autoForwardPorts": false,
-			"remote.restoreForwardedPorts": false
+			"remote.restoreForwardedPorts": false,
+
+			// Auto-close the Configuring terminal when setup completes successfully
+			"terminal.integrated.enablePersistentSessions": false
 		},
 
 		// Add the IDs of VS code extensions you want to install here
@@ -64,6 +69,9 @@
 	// Use 'postCreateCommand' to run commands once after the container is created
 	"postCreateCommand": "mkdir -p logs && mkdir -p models && mkdir -p data",
 
+	// Use 'postStartCommand' to run commands once each time the container starts
+	"postStartCommand": "",
+
 	// Use 'postAttachCommand' to run commands each time a user connects to the container
-	"postAttachCommand": "screen -dmS tensorboard tensorboard --logdir=logs"
+	"postAttachCommand": "/usr/local/bin/start_tensorboard.sh"
 }
