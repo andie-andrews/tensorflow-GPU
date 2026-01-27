@@ -6,9 +6,7 @@
 	// See here: https://hub.docker.com/r/gperdrizet/tensorflow-gpu
     // And here: https://docs.nvidia.com/deeplearning/frameworks/tensorflow-release-notes/rel-24-06.html
 	"name": "TensorFlow 2.16 GPU",
-	"build": {
-		"dockerfile": "Dockerfile"
-	},
+	"image": "gperdrizet/tensorflow-gpu",
     "runArgs": [
 		"--gpus", "all",              // Enable all available GPUs in the container
 		"--ipc=host",                 // Connect to host interprocess namespace
