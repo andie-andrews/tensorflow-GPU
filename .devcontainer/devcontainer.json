@@ -69,7 +69,5 @@
 	"postCreateCommand": "mkdir -p logs && mkdir -p models && mkdir -p data",
 
 	// Use 'postAttachCommand' to run TensorBoard
-	"postAttachCommand": {
-		"tensorboard": "tensorboard --logdir=logs --bind_all"
-	}
+	"postAttachCommand": ""
 }
