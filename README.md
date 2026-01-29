@@ -1,21 +1,19 @@
-# TensorFlow GPU development environment
+# Deep learning GPU development environment
 
-**Now includes PyTorch 2.10**
-
-A ready-to-use TensorFlow environment with NVIDIA GPU support for VS Code. Designed for cross-platform support and wide GPU compatibility.
+A ready-to-use deep learning environment with NVIDIA GPU support for VS Code. Includes both **PyTorch** and **TensorFlow** frameworks. Designed for cross-platform support and wide GPU compatibility.
 
 ## What's included
 
 | Category | Versions |
 |----------|----------|
 | **GPU** | CUDA 12.5, cuDNN 9.1 |
-| **ML** | TensorFlow 2.16, Keras 3.3, PyTorch 2.10, Scikit-learn 1.4 |
+| **ML** | PyTorch 2.10, TensorFlow 2.16, Keras 3.3, Scikit-learn 1.4 |
 | **Python** | Python 3.10, NumPy 1.24, Pandas 2.2, Matplotlib 3.10 |
 | **Tools** | JupyterLab, TensorBoard |
 
 Based on [NVIDIA's TensorFlow 24.06 container](https://docs.nvidia.com/deeplearning/frameworks/tensorflow-release-notes/rel-24-06.html).
 
-> **No NVIDIA GPU?** Use the CPU version instead: [gperdrizet/tensorflow-CPU](https://github.com/gperdrizet/tensorflow-CPU)
+> **No NVIDIA GPU?** Use the CPU version instead: [gperdrizet/deeplearning-CPU](https://github.com/gperdrizet/deeplearning-CPU)
 
 ## Project structure
 
@@ -119,7 +117,7 @@ Now your packages will be automatically installed whenever the container is crea
 
 ## Using as a template for new projects
 
-You can use your fork as a starting point for new TensorFlow projects:
+You can use your fork as a starting point for new deep learning projects:
 
 1. **Clone** your fork:
    ```bash
@@ -151,7 +149,7 @@ You can use your fork as a starting point for new TensorFlow projects:
    git push
    ```
 
-Now you have a fresh TensorFlow GPU project with the dev container configuration ready to go!
+Now you have a fresh deep learning GPU project with the dev container configuration ready to go!
 
 ## Keeping your fork updated
 
