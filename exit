@@ -1,0 +1,21 @@
+[33mcommit 435579dcff21c551f0aa52ea567e0b086ba2dc5a[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: George Perdrizet <george@perdrizet.org>
+Date:   Thu Feb 5 01:47:21 2026 -0500
+
+    Fix typo in Quick Start section
+    
+    Corrected a typo in the README regarding project usage.
+
+[1mdiff --git a/README.md b/README.md[m
+[1mindex 955958f..cd03624 100644[m
+[1m--- a/README.md[m
+[1m+++ b/README.md[m
+[36m@@ -60,7 +60,7 @@[m [mCheck your GPU's compute capability: [NVIDIA CUDA GPUs](https://developer.nvidia[m
+ [m
+ ## Quick start[m
+ [m
+[31m-To quickly try the container environment out on your system do the following. If you want to use is for your own project see below.[m
+[32m+[m[32mTo quickly try the container environment out on your system do the following. If you want to use it for your own project, see below.[m
+ [m
+ 1. **Fork** this repository (click "Fork" button above)[m
+ [m
